@@ -60,9 +60,25 @@
             </div>
             <div class="action-buttons">
                 <button id="wrong-btn" class="btn btn-wrong" disabled>Missed It</button>
-                <button id="right-btn" class=""></button>
+                <button id="right-btn" class="btn btn-right" disable>Got It!</button>
             </div>
+            <button id="next-btn" class="btn-next">Next Card</button>
         </main>
     </div>
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <h2>Session Complete!</h2>
+            <div class="results-grid">
+                <div><span id="res-score">0/0</span><p>Score</p></div>
+                <div><span id="res-pct">0%</span><p>Accuracy</p></div>
+            </div>
+            <div id="wrong-review-section" style="display:none;">
+                <h3>Review wrong answers:</h3>
+                <ul id="wrong-list"></ul>
+            </div>
+            <button id="restart-btn" class="btn btn-primary">Study Again</button>
+        </div>
+    </div>
+    <script> scr="js/flashcard.js"</script>
 </body>
 </html>
