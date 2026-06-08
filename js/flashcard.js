@@ -46,5 +46,34 @@ function bindEvents() {
     document.getElementById('card-form').addEventListener('submit', creatCard);
     document.getElementById('clear-custom-btn').addEventListener('click', resetCustomCards);
     document.getElementById('restart-btn').addEventListener('click', resetSession);
-    
+    document.addEventListener('keydown', (e) => {
+        if(e.code === 'Space' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+            e.preventDefault();
+            toggleFlip();
+        }
+        if(!wrongBtn.disabled && e.key === "ArrowLeft") recordAnswer(false);
+        if(!rightBtn.disabled && e.key === "ArrowRight") recordAnswer(true);
+    });
 }
+
+function initLocalStorage() {
+    const savedCustom = localStorage.getItem('custom_deck');
+    if (savedCustom) {
+        masterDecks.custom = JSON.parse(savedCustom);
+    }
+    const highScore = localStorage.getItem('high_score') || 0;
+    document.getElementById('high-score').innerText = highScore;
+}
+
+
+function createCard(e) {
+    e.preventDefault();
+    const q = document.getElementById('new-question').value;
+    const a = document.getElementById('new-answer').value;
+    masterDecks.custom.push({ question: q, answer: a });
+    localStorage.setItem('custom_deck', JSON.stringify(masterDecks.custom));
+    document.getElementById('card-form').reset();
+    alert(' Card added to "My Custom Cards" successfully');
+    if(deckSelect.value === 'custom') changeDeck();
+}
+
