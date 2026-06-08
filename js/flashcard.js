@@ -77,3 +77,22 @@ function createCard(e) {
     if(deckSelect.value === 'custom') changeDeck();
 }
 
+function resetCustomCards() {
+    if(confirm("Are you sure you want to clear your custom cards?")) {
+        localStorage.removeItem('custom_deck');
+        masterDecks.custom = [];
+        if(deckSelect.value === 'custom') changeDeck();
+    }
+}
+
+function setupSteak() {
+    const today = new Date().toDateString();
+    const lastPlayed = localStorage.getItem('last_played_date');
+    let streak = parseInt(localStorage.getItem('streak_count')) || 0;
+    if (lastPlayed) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate( -1);
+        if (lastPlayed === yesterday.toDateString()) {
+        })
+    }
+}
