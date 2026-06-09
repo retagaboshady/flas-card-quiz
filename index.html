@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcard</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Pro Flashcard Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="app-layout">
         <aside class="sidebar">
-            <h2>Dashboard</h2>
+            <h2>⚙️ Dashboard</h2>
+            
             <div class="stat-box">
-                <p>Streak: <span id="streak-count">0</span> days</p>
-                <p>High Score: <span id="high-score">0</span></p>
+                <p>🔥 Streak: <span id="streak-count">0</span> days</p>
+                <p>🏆 High Score: <span id="high-score">0</span></p>
             </div>
+
             <div class="deck-selector">
-                <label for="deck-select">Choose Deck</label>
+                <label for="deck-select">Choose Deck:</label>
                 <select id="deck-select">
                     <option value="all">All Decks Mixed</option>
                     <option value="frontend">Frontend Dev</option>
@@ -23,51 +26,58 @@
                     <option value="custom">My Custom Cards</option>
                 </select>
             </div>
+
             <div class="creator-box">
-                <h3>Create Custom Cards</h3>
+                <h3>➕ Create Custom Card</h3>
                 <form id="card-form">
-                    <input type="text" id="new-question" placeholder="Enter Question" required>
-                    <textarea id="new-answer" placeholder="Enter Answer" reuired></textarea>
-                    <button type="sumbit" class="btn btn-primary">Add Card</button>
+                    <input type="text" id="new-question" placeholder="Enter Question..." required>
+                    <textarea id="new-answer" placeholder="Enter Answer..." required></textarea>
+                    <button type="submit" class="btn btn-primary">Add Card</button>
                 </form>
                 <button id="clear-custom-btn" class="btn btn-danger-outline">Reset Custom Cards</button>
             </div>
         </aside>
+
         <main class="quiz-container">
             <header class="quiz-header">
                 <div>
-                    <span id="deck-badge" class="badge">Frondend Dev</span>
+                    <span id="deck-badge" class="badge">Frontend Dev</span>
                     <p id="score-track">Card: 1/4</p>
                 </div>
                 <div class="timer-box">
-                    <span id="timer">15</span>s
+                    ⏱️ <span id="timer">15</span>s
                 </div>
             </header>
+            
             <div class="progress-container">
                 <div id="progress-bar"></div>
             </div>
-            <div class="flashcard" id="flascard">
+
+            <div class="flashcard" id="flashcard">
                 <div class="card-inner">
                     <div class="card-front">
-                        <p id="question-text">Loading card....</p>
+                        <p id="question-text">Loading card...</p>
                         <span class="hint">Spacebar or Click to flip</span>
                     </div>
                     <div class="card-back">
-                        <p id="answer-text">Loading answer....</p>
+                        <p id="answer-text">Loading answer...</p>
                         <span class="hint">Spacebar or Click to flip back</span>
                     </div>
                 </div>
             </div>
+
             <div class="action-buttons">
-                <button id="wrong-btn" class="btn btn-wrong" disabled>Missed It</button>
-                <button id="right-btn" class="btn btn-right" disable>Got It!</button>
+                <button id="wrong-btn" class="btn btn-wrong" disabled>❌ Missed It</button>
+                <button id="right-btn" class="btn btn-right" disabled>✅ Got It!</button>
             </div>
-            <button id="next-btn" class="btn-next">Next Card</button>
+
+            <button id="next-btn" class="btn-next">Next Card ➡️</button>
         </main>
     </div>
+
     <div id="result-modal" class="modal">
         <div class="modal-content">
-            <h2>Session Complete!</h2>
+            <h2>🎉 Session Complete!</h2>
             <div class="results-grid">
                 <div><span id="res-score">0/0</span><p>Score</p></div>
                 <div><span id="res-pct">0%</span><p>Accuracy</p></div>
@@ -79,6 +89,7 @@
             <button id="restart-btn" class="btn btn-primary">Study Again</button>
         </div>
     </div>
-    <script> scr="js/flashcard.js"</script>
+
+    <script src="script.js"></script>
 </body>
 </html>
