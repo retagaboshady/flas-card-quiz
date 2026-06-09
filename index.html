@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Flashcard Hub</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <div class="app-layout">
         <aside class="sidebar">
-            <h2>⚙️ Dashboard</h2>
-            
+            <h2>Dashboard</h2>
+
             <div class="stat-box">
-                <p>🔥 Streak: <span id="streak-count">0</span> days</p>
-                <p>🏆 High Score: <span id="high-score">0</span></p>
+                <p>Streak: <span id="streak-count">0</span> days</p>
+                <p>High Score: <span id="high-score">0</span></p>
             </div>
 
             <div class="deck-selector">
@@ -28,10 +28,10 @@
             </div>
 
             <div class="creator-box">
-                <h3>➕ Create Custom Card</h3>
+                <h3>Create Custom Card</h3>
                 <form id="card-form">
-                    <input type="text" id="new-question" placeholder="Enter Question..." required>
-                    <textarea id="new-answer" placeholder="Enter Answer..." required></textarea>
+                    <input type="text" id="new-question" placeholder="Enter Question" required>
+                    <textarea id="new-answer" placeholder="Enter Answer" required></textarea>
                     <button type="submit" class="btn btn-primary">Add Card</button>
                 </form>
                 <button id="clear-custom-btn" class="btn btn-danger-outline">Reset Custom Cards</button>
@@ -45,10 +45,10 @@
                     <p id="score-track">Card: 1/4</p>
                 </div>
                 <div class="timer-box">
-                    ⏱️ <span id="timer">15</span>s
+                    <span id="timer">15</span>s
                 </div>
             </header>
-            
+
             <div class="progress-container">
                 <div id="progress-bar"></div>
             </div>
@@ -56,11 +56,11 @@
             <div class="flashcard" id="flashcard">
                 <div class="card-inner">
                     <div class="card-front">
-                        <p id="question-text">Loading card...</p>
+                        <p id="question-text">Loading card</p>
                         <span class="hint">Spacebar or Click to flip</span>
                     </div>
                     <div class="card-back">
-                        <p id="answer-text">Loading answer...</p>
+                        <p id="answer-text">Loading answer</p>
                         <span class="hint">Spacebar or Click to flip back</span>
                     </div>
                 </div>
@@ -71,13 +71,13 @@
                 <button id="right-btn" class="btn btn-right" disabled>✅ Got It!</button>
             </div>
 
-            <button id="next-btn" class="btn-next">Next Card ➡️</button>
+            <button id="next-btn" class="btn-next">Next Card </button>
         </main>
     </div>
 
     <div id="result-modal" class="modal">
         <div class="modal-content">
-            <h2>🎉 Session Complete!</h2>
+            <h2> Session Complete!</h2>
             <div class="results-grid">
                 <div><span id="res-score">0/0</span><p>Score</p></div>
                 <div><span id="res-pct">0%</span><p>Accuracy</p></div>
@@ -89,7 +89,6 @@
             <button id="restart-btn" class="btn btn-primary">Study Again</button>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    <script src="js/flashcard.js"></script>
 </body>
 </html>
